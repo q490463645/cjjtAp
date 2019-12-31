@@ -1,0 +1,100 @@
+@color1:#fff;
+@color2: rgb(88,128,179);
+@color3:#a6e8ff;
+@color4:rgba(74,144,226,.27);
+@color5:rgba(18,104,160,.27);
+@color6:linear-gradient(0deg, rgb(0, 45, 72) 0%, rgb(1, 116, 166) 100%);
+@color7:rgba(18,104,160,.6);
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+//头部
+.header{
+    height: 36px;
+    border-bottom: 1px rgb(255,45,45) solid;
+    background: #fff;
+    box-shadow: 1px 1px 1px rgb(255,45,45);
+    .logo {
+      height: 30px;
+      margin: 3px;
+    }
+}
+//菜单
+.mint-tabbar{
+    background: rgb(222,222,222);
+    .icon{
+        font-size: 24px;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+//首页
+.map-area{
+    height:~"calc(100vh - 91px)";
+}
+
+//数据中心
+.main{
+  height:~"calc(100vh - 91px)";
+  overflow: auto;
+  background: rgb(242,242,242);
+}
+.analysisList{
+    width: 50%;
+    padding:5px;
+    box-sizing: border-box;
+    border:1px #333 solid;
+    float: left;
+    .title{
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background: #ddd;
+        border-radius:5px;
+    }
+    .listContent{
+        margin-top: 5px;
+        .button{
+           width: 35%;
+           height: 15vh;
+           line-height: 15vh;
+           text-align: center;
+           float: right;
+           background: @color2;
+           color: @color1;
+           border-radius:0 5px 5px 0;
+        }
+       img{
+            width: 60%;
+            height: 15vh;
+            float: left;
+        }  
+    }
+    .mint-swipe{
+        height: 8.5vh;
+        width: 100%;
+        .mint-swipe-items-wrap{
+            .button{
+               width: 49%;
+               height: 6vh;
+               line-height: 6vh;
+               text-align: center;
+               float: left;
+               color: @color1;
+               border-radius:5px; 
+               margin-top:5px;
+            }
+            .button:nth-of-type(2n-1){
+                float: right;
+            }
+        }
+       
+        .mint-swipe-indicators{
+            bottom: 0;
+        }
+    }
+    
+   
+}
