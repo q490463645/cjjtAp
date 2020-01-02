@@ -87,29 +87,18 @@
 		},
 		mounted() {},
 		methods: {
-			openDestislList() {
-				console.log("arrow");
-				// if (name == "") {
-				//   this.$message("暂无模块");
-				//   return;
-				// }
-				// newWindow.openNewWindow(name, true, "staff", 1500, 1000);
-			},
-			allModule() {
-				this.$emit("allModule");
-			},
 			details(name) {
 				console.log(name);
 				if(name == "") {
 					Toast('暂无模块');
 					return;
+				}else{
+					this.$router.push({path:name})
 				}
 			}
 		},
 		created() {
-			
 			this.list = this.itemData.list
-			console.log(this.list)
 		},
 		watch: {
 			itemData: {
