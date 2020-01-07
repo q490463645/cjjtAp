@@ -103,6 +103,7 @@
    .header{
        background: @color2;
        position: relative;
+       color:@color1;
         a{
            display: block;
            width: 36px;
@@ -166,4 +167,96 @@
        }
    }
    
+   .main{
+       width: 100%;
+       .contractList{
+        padding:0 10px;
+        box-sizing:border-box;
+        li{
+            padding:5px;
+            box-sizing:border-box;
+            border-bottom:1px solid #ccc;
+            .itemsPro{
+                color:#666;
+                display:flex;
+                flex-direction:column;
+                span{
+                    padding-bottom: 3px;
+                    box-sizing:border-box;
+                }
+            }
+        }
+       }
+   }
+}
+.messageDetails{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .mint-header{
+        background: @color2;
+    }
+    #main{
+        flex:1;
+        overflow-y: scroll;
+        display:flex;
+        flex-direction:column;
+        .menu{
+            width: 100%;
+            height: 40px;
+            margin-bottom: 5px;
+            display:flex;
+            align-items:center;
+            padding:0 5px;
+            box-sizing:border-box;
+            .mint-navbar{
+                width: 100%;
+                display:flex;
+                justify-content: space-around;
+            }
+        }
+        .mint-tab-container{
+            width: 100%;
+            height: auto;
+            text-align: center;            
+            padding:5px 10px;
+            box-sizing: border-box;
+            h3{
+                padding:5px 0;
+                box-sizing: border-box;
+            }
+            ul{
+                width: 100%;
+                background:#fff;
+                border-radius:10px;
+                color:#666;
+                // padding: 0;
+                // box-sizing: border-box;
+                
+                li{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding:10px 20px;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+        }
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        background: #ccc;
+        color:#fff;
+        text-align: center;
+        b{
+            font-size: 20px;
+        }
+    }
 }

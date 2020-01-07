@@ -5,7 +5,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-  	
     {
     	//首页
       path: '/',
@@ -31,7 +30,19 @@ export default new Router({
     		//合同信息列表
     	path: '/contractAnalyze',
       name: 'contractAnalyze',
-      component: () => import("@/components/dataAnalysis/contractAnalyze/contractAnalyze")
+      component: () => import("@/components/dataAnalysis/contractAnalyze/contractAnalyze"),
+      // children:[
+      //   {
+      //     path:'/contractAnalyze/messageDetails/:id',
+  
+      //     name:'messageDetails',
+      //     component:()=>import("@/components/dataAnalysis/contractAnalyze/messageDetails")
+      //   }
+      // ]
+    },{
+      path:'/contractAnalyze/messageDetails/:id',
+      name:'messageDetails',
+      component:()=>import("@/components/dataAnalysis/contractAnalyze/messageDetails")
     },{
     		//合同动态信息
     	path: '/contractDynamicAnalysis',
