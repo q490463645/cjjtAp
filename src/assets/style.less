@@ -1,6 +1,12 @@
 @color1:#fff;
+
 @color2: rgb(88,128,179);
-@color3:#a6e8ff;
+
+@color3:rgb(255,45,45);
+
+@color4:rgb(10,10,10);
+
+@color5:rgb(200,200,200);
 *{
     margin: 0;
     padding: 0;
@@ -11,8 +17,7 @@
     height: 36px;
     line-height: 36px;
     border-bottom: 1px rgb(255,45,45) solid;
-    background: #fff;
-    box-shadow: 1px 1px 1px rgb(255,45,45);
+    background: @color1;
     .logo {
       height: 30px;
       margin: 3px;
@@ -112,4 +117,53 @@
            z-index: 1;
        }
    }
+   #echarts6{
+      height: 300px;
+      width: 100%;
+      background: @color4;
+   }
+   .projectLists{
+       height: ~"calc(100vh - 441px)";
+       overflow: auto;
+       .projectList{
+           height: 100px;
+           padding: 10px;
+           border-bottom: 1px @color5 solid;
+           line-height: 26px;
+           color: #666;
+         
+           .labelItem{
+               width:20%;
+               height: 26px;
+               line-height: 26px;
+               background: @color2;
+               border-radius: 2px;
+               display: inline-block;
+               font-size: 16px;
+               text-align: center;
+               color: @color1;
+           } 
+           .itemTit{
+               width: 80%;
+               float: right;
+               text-indent: 1em;
+               display: inline-block;
+               height: 26px;
+               overflow: hidden;
+               text-overflow:ellipsis;
+               white-space: nowrap;
+           }
+           .itemTxt{
+               width: 80%;
+               float: right;
+               text-indent: 1em;
+               display: inline-block;
+               height: 26px;
+               overflow: hidden;
+               text-overflow:ellipsis;
+               white-space: nowrap;
+           }
+       }
+   }
+   
 }

@@ -11,6 +11,16 @@ Vue.use(Mint);
 import router from './router/index.js';
 //引用store
 import store from './store/index.js';
+//请求数据
+import axios from 'axios'
+Vue.prototype.$http = axios
+
+//echart组件
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+//公用方法
+import utils from './util.js'
+Vue.prototype.utils = utils
 
 FastClick.attach(document.body)
 
