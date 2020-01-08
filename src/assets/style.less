@@ -196,6 +196,9 @@
         background: @color2;
         color:@color1;
         display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
         justify-content: center;
         a{
            width: 30px;
@@ -212,6 +215,10 @@
     #main{
         flex:1;
         display:flex;
+        position: absolute;
+        top: 36px;
+        height: ~"calc(100vh - 96px)"; 
+        overflow: auto;
         flex-direction:column;
         .menu{
             width: 100%;

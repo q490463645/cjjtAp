@@ -140,7 +140,7 @@ export default {
                         0
                     ],
                     start: 0,
-                    end: 18,
+                    end: 10,
                     handleSize: '50%',
                     handleStyle: {
                         color: "#d3dee5",
@@ -245,14 +245,12 @@ export default {
                 ]
             })
             this.myChart.on('legendselectchanged', (params) => {
-            	console.log(params)
             	this.paramsName=params.name
                 this.$emit('changeLegend',params.name)
             })
-            // this.myChart.on('datazoom', (params) => {
-            //     var startValue = myChart.getModel().option.dataZoom[0].startValue;
-    		//     this.$emit('screenEchart',startValue);
-            // })
+            this.myChart.on('click', (params) => {
+                this.$emit('clickBar',params.dataIndex)
+            })
         },
 
     },
