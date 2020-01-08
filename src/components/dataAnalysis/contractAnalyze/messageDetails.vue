@@ -53,15 +53,54 @@
               <p>{{item.danwei}}</p>
             </li>
           </ul>
+          <div class="footer">
+            <b>业主合同&nbsp;{{item.totals.length}}&nbsp;项</b>
+          </div>
         </mt-tab-container-item>
         <mt-tab-container-item id="2">
-           <h3 id="itemTop">{{item.title}}</h3>
+          <h3 id="itemTop">{{item.title}}</h3>
           <ul v-for="(item,index) in item.professionals" :key="index">
+            <li>
+              <ol class="items">
+                <li style="display:flex;justify-content: space-between;">
+                  <p>合同名称：</p>
+                  <p class="contractName">{{item.title}}</p>
+                </li>
+                <li>
+                  <p>合同金额(含税)：</p>
+                  <p>{{item.sum}}元</p>
+                </li>
+                <li>
+                  <p>计 量：</p>
+                  <p>{{item.metering}}元</p>
+                </li>
+                <li>
+                  <p>付 款：</p>
+                  <p>{{item.payment}}元</p>
+                </li>
+                <li style="display:flex;justify-content: space-between;">
+                  <p>分包商：</p>
+                  <p class="fenbao">{{item.subContractor}}</p>
+                </li>
+                <li>
+                  <p>法人：</p>
+                  <p>{{item.Corp}}</p>
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <div class="footer">
+            <b>专业分包合同&nbsp;{{item.professionals.length}}&nbsp;项</b>
+          </div>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="3">
+          <h3 id="itemTop">{{item.title}}</h3>
+          <ul v-for="(item,index) in item.subcontractors" :key="index">
             <li>
               <ol class="items">
                 <li>
                   <p>合同名称：</p>
-                  <p>{{item.title}}</p>
+                  <p class="contractName">{{item.title}}</p>
                 </li>
                 <li>
                   <p>合同金额(含税)：</p>
@@ -77,7 +116,7 @@
                 </li>
                 <li>
                   <p>分包商：</p>
-                  <p>{{item.subContractor}}</p>
+                  <p class="fenbao">{{item.subContractor}}</p>
                 </li>
                 <li>
                   <p>法人：</p>
@@ -86,144 +125,120 @@
               </ol>
             </li>
           </ul>
+          <div class="footer">
+            <b>劳务分包合同&nbsp;{{item.subcontractors.length}}&nbsp;项</b>
+          </div>
         </mt-tab-container-item>
-        <mt-tab-container-item id="3">
-          <ul v-for="(item,index) in item.subcontractors" :key="index">
-            <h3>{{item.name}}</h3>
+        <mt-tab-container-item id="4">
+          <h3 id="itemTop">{{item.title}}</h3>
+          <ul v-for="(item,index) in item.cagou" :key="index">
             <li>
-              <p>合同造价(含税)：</p>
-              <p>{{item.cost}}元</p>
-            </li>
-            <li>
-              <p>工程计量(业主批复)：</p>
-              <p>{{item.measure}}元</p>
-            </li>
-            <li>
-              <p>合同开工日期：</p>
-              <p>{{item.stating}}</p>
-            </li>
-            <li>
-              <p>合同竣工日期：</p>
-              <p>{{item.end}}</p>
-            </li>
-            <li>
-              <p>合同日期：</p>
-              <p>{{item.days}}天</p>
-            </li>
-            <li>
-              <p>签约日期：</p>
-              <p>{{item.contractDate}}</p>
-            </li>
-            <li>
-              <p>建设单位：</p>
-              <p>{{item.danwei}}</p>
+              <ol class="items">
+                <li>
+                  <p>合同名称：</p>
+                  <p class="contractName">{{item.title}}</p>
+                </li>
+                <li>
+                  <p>合同金额(含税)：</p>
+                  <p>{{item.sum}}元</p>
+                </li>
+                <li>
+                  <p>计 量：</p>
+                  <p>{{item.metering}}元</p>
+                </li>
+                <li>
+                  <p>付 款：</p>
+                  <p>{{item.payment}}元</p>
+                </li>
+                <li>
+                  <p>分包商：</p>
+                  <p class="fenbao">{{item.subContractor}}</p>
+                </li>
+                <li>
+                  <p>法人：</p>
+                  <p>{{item.Corp}}</p>
+                </li>
+              </ol>
             </li>
           </ul>
+          <div class="footer">
+            <b>采购合同&nbsp;{{item.cagou.length}}&nbsp;项</b>
+          </div>
         </mt-tab-container-item>
-        <mt-tab-container-item id="4" v-for="(item,index) in item.cagou" :key="index">
-          <ul v-for="(item,index) in item.totals" :key="index">
-            <h3>{{item.name}}</h3>
+        <mt-tab-container-item id="5">
+          <h3 id="itemTop">{{item.title}}</h3>
+          <ul v-for="(item,index) in item.zulin" :key="index">
             <li>
-              <p>合同造价(含税)：</p>
-              <p>{{item.cost}}元</p>
-            </li>
-            <li>
-              <p>工程计量(业主批复)：</p>
-              <p>{{item.measure}}元</p>
-            </li>
-            <li>
-              <p>合同开工日期：</p>
-              <p>{{item.stating}}</p>
-            </li>
-            <li>
-              <p>合同竣工日期：</p>
-              <p>{{item.end}}</p>
-            </li>
-            <li>
-              <p>合同日期：</p>
-              <p>{{item.days}}天</p>
-            </li>
-            <li>
-              <p>签约日期：</p>
-              <p>{{item.contractDate}}</p>
-            </li>
-            <li>
-              <p>建设单位：</p>
-              <p>{{item.danwei}}</p>
+              <ol class="items">
+                <li>
+                  <p>合同名称：</p>
+                  <p class="contractName">{{item.title}}</p>
+                </li>
+                <li>
+                  <p>合同金额(含税)：</p>
+                  <p>{{item.sum}}元</p>
+                </li>
+                <li>
+                  <p>计 量：</p>
+                  <p>{{item.metering}}元</p>
+                </li>
+                <li>
+                  <p>付 款：</p>
+                  <p>{{item.payment}}元</p>
+                </li>
+                <li>
+                  <p>分包商：</p>
+                  <p class="fenbao">{{item.subContractor}}</p>
+                </li>
+                <li>
+                  <p>法人：</p>
+                  <p>{{item.Corp}}</p>
+                </li>
+              </ol>
             </li>
           </ul>
+          <div class="footer">
+            <b>租赁合同&nbsp;{{item.zulin.length}}&nbsp;项</b>
+          </div>
         </mt-tab-container-item>
-        <mt-tab-container-item id="5" v-for="(item,index) in item.zulin" :key="index">
-          <ul v-for="(item,index) in item.totals" :key="index">
-            <h3>{{item.name}}</h3>
+        <mt-tab-container-item id="6">
+          <h3 id="itemTop">{{item.title}}</h3>
+          <ul v-for="(item,index) in item.qita" :key="index">
             <li>
-              <p>合同造价(含税)：</p>
-              <p>{{item.cost}}元</p>
-            </li>
-            <li>
-              <p>工程计量(业主批复)：</p>
-              <p>{{item.measure}}元</p>
-            </li>
-            <li>
-              <p>合同开工日期：</p>
-              <p>{{item.stating}}</p>
-            </li>
-            <li>
-              <p>合同竣工日期：</p>
-              <p>{{item.end}}</p>
-            </li>
-            <li>
-              <p>合同日期：</p>
-              <p>{{item.days}}天</p>
-            </li>
-            <li>
-              <p>签约日期：</p>
-              <p>{{item.contractDate}}</p>
-            </li>
-            <li>
-              <p>建设单位：</p>
-              <p>{{item.danwei}}</p>
+              <ol class="items">
+                <li>
+                  <p>合同名称：</p>
+                  <p class="contractName">{{item.title}}</p>
+                </li>
+                <li>
+                  <p>合同金额(含税)：</p>
+                  <p>{{item.sum}}元</p>
+                </li>
+                <li>
+                  <p>计 量：</p>
+                  <p>{{item.metering}}元</p>
+                </li>
+                <li>
+                  <p>付 款：</p>
+                  <p>{{item.payment}}元</p>
+                </li>
+                <li>
+                  <p>分包商：</p>
+                  <p class="fenbao">{{item.subContractor}}</p>
+                </li>
+                <li>
+                  <p>法人：</p>
+                  <p>{{item.Corp}}</p>
+                </li>
+              </ol>
             </li>
           </ul>
-        </mt-tab-container-item>
-        <mt-tab-container-item id="6" v-for="(item,index) in item.qita" :key="index">
-          <ul v-for="(item,index) in item.totals" :key="index">
-            <h3>{{item.name}}</h3>
-            <li>
-              <p>合同造价(含税)：</p>
-              <p>{{item.cost}}元</p>
-            </li>
-            <li>
-              <p>工程计量(业主批复)：</p>
-              <p>{{item.measure}}元</p>
-            </li>
-            <li>
-              <p>合同开工日期：</p>
-              <p>{{item.stating}}</p>
-            </li>
-            <li>
-              <p>合同竣工日期：</p>
-              <p>{{item.end}}</p>
-            </li>
-            <li>
-              <p>合同日期：</p>
-              <p>{{item.days}}天</p>
-            </li>
-            <li>
-              <p>签约日期：</p>
-              <p>{{item.contractDate}}</p>
-            </li>
-            <li>
-              <p>建设单位：</p>
-              <p>{{item.danwei}}</p>
-            </li>
-          </ul>
+          <div class="footer">
+            <b>其他合同&nbsp;{{item.qita.length}}&nbsp;项</b>
+          </div>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
-    <!-- <div class="footer">
-        <b>业主合同1项</b>
-    </div>-->
   </div>
 </template>
 <script>

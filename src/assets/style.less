@@ -190,15 +190,22 @@
    }
 }
 .messageDetails{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     .listheader{
-        .mint-header{
-            background: @color2;
-            height: 36px;
-            line-height: 36px;
+        height: 36px;
+        line-height: 36px;
+        background: @color2;
+        color:@color1;
+        display: flex;
+        justify-content: center;
+        a{
+           width: 30px;
+           padding-left: 10px;
+           box-sizing: border-box;
+        }
+       h3{
+           flex:1;
+           text-align: center;
+           z-index: 1;
         }
     }
     
@@ -208,7 +215,6 @@
         flex-direction:column;
         .menu{
             width: 100%;
-            height: 40px;
             margin-bottom: 5px;
             display:flex;
             align-items:center;
@@ -257,26 +263,43 @@
                             border-bottom: 0;
                             padding:3px 20px;
                             box-sizing: border-box;
+                            .contractName{
+                                flex:1;
+                                text-align:right;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                overflow: hidden;
+                            }
+                            .fenbao{
+                                flex:1;
+                                text-align:right;
+                                overflow: hidden;
+                                text-overflow:ellipsis;
+                                white-space: nowrap;
+                            }
                         }
                     }
                 }
             }
+            .footer{
+                position: fixed;
+                bottom: 0;
+                left:0;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background: #ccc;
+                color:#fff;
+                text-align: center;
+                // padding-top:5px ;
+                // box-sizing: border-box;
+                // margin-top:50px;
+                b{
+                    font-size: 20px;
+                }
+            }
         }
         
-    }
-    .footer{
-        position: absolute;
-        bottom: 0;
-        left:0;
-        width: 100%;
-        height: 60px;
-        line-height: 60px;
-        background: #ccc;
-        color:#fff;
-        text-align: center;
-        // margin-top:50px;
-        b{
-            font-size: 20px;
-        }
     }
 }

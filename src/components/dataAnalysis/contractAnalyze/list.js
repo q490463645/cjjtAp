@@ -21,7 +21,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久",
-                title:"亚投行-现场临设",
+                title:"亚投行-现场临设那就行蛋壳草大加快速度吧你放假撒旦画你房间多少家好不能从的数据",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -79,6 +79,7 @@ export default [
         cagou:[
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -256,6 +257,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -267,6 +269,7 @@ export default [
         zulin:[],
         qita:[{
             name:"亚洲基础设施投资银行总部",
+            title:"亚投行-现场临设",
             sum:"1,250,000",
             metering:"198,000",
             payment:"198,000",
@@ -351,6 +354,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -361,6 +365,7 @@ export default [
         cagou:[],
         zulin:[{
             name:"亚洲基础设施投资银行总部",
+            title:"亚投行-现场临设",
             sum:"1,250,000",
             metering:"198,000",
             payment:"198,000",
@@ -446,6 +451,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -534,6 +540,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -622,6 +629,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -631,6 +639,7 @@ export default [
         ],
         cagou:[{
             name:"亚洲基础设施投资银行总部",
+            title:"亚投行-现场临设",
             sum:"1,250,000",
             metering:"198,000",
             payment:"198,000",
@@ -639,6 +648,7 @@ export default [
         }],
         zulin:[{
             name:"亚洲基础设施投资银行总部",
+            title:"亚投行-现场临设",
             sum:"1,250,000",
             metering:"198,000",
             payment:"198,000",
@@ -647,6 +657,7 @@ export default [
         }],
         qita:[{
             name:"亚洲基础设施投资银行总部",
+            title:"亚投行-现场临设",
             sum:"1,250,000",
             metering:"198,000",
             payment:"198,000",

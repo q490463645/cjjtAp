@@ -1,28 +1,22 @@
 <template>
-    <div class="listheader" style="display:flex;flex-direction:column;">
-        <mt-header :title="text">
-          <div @click="changeRoute" slot="left">
-            <mt-button icon="back"></mt-button>
-          </div>
-        </mt-header>
-        
-    </div>
+  <div class="listheader">
+    <a class="icon iconfont" @click="changeRoute">&#xe618;</a>
+    <h3>{{text}}</h3>
+    <b></b>
+  </div>
 </template>
 
 <script>
 export default {
   name: "listheader",
   data() {
-    return {
-    };
+    return {};
   },
-  props:["text"],
+  props: ["text"],
   methods: {
-    changeRoute(){
+    changeRoute() {
       this.$router.back(-1);
-    }    
-  },
-  
-
+    }
+  }
 };
 </script>
