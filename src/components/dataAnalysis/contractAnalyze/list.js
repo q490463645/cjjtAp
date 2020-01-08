@@ -74,14 +74,7 @@ export default [
             }
         ],
         subcontractors:[//劳务分包
-            {
-                name:"亚洲基础设施投资银行总部",
-                sum:"1,250,000",
-                metering:"198,000",
-                payment:"198,000",
-                subContractor:"北京安机电设备安装工程有限公司",
-                Corp:"李胖"  
-            }
+            
         ],
         cagou:[
             {
@@ -118,6 +111,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -126,6 +120,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -134,6 +129,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -141,6 +137,17 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
+                sum:"4,250,000",
+                metering:"3,198,000",
+                payment:"3,198,000",
+                subContractor:"北京鑫泰德安机电设备安装工程有限公司",
+                title:"亚投行-现场临设",
+                Corp:"李勇"
+            },
+            {
+                name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -149,14 +156,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
-                sum:"4,250,000",
-                metering:"3,198,000",
-                payment:"3,198,000",
-                subContractor:"北京鑫泰德安机电设备安装工程有限公司",
-                Corp:"李勇"
-            },
-            {
-                name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -167,6 +167,7 @@ export default [
         subcontractors:[//劳务分包
             {
                 name:"亚洲基础设施投资银行总部",
+                title:"亚投行-现场临设",
                 sum:"1,250,000",
                 metering:"198,000",
                 payment:"198,000",
@@ -200,6 +201,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -208,6 +210,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -216,6 +219,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -223,6 +227,7 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -231,6 +236,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -239,6 +245,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -289,6 +296,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -297,6 +305,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -305,6 +314,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -312,6 +322,7 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -320,6 +331,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -328,6 +340,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -378,6 +391,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -386,6 +400,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -394,6 +409,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -401,6 +417,7 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -409,6 +426,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -417,6 +435,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -460,6 +479,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -468,6 +488,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -476,6 +497,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -483,6 +505,7 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -491,6 +514,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -499,6 +523,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -542,6 +567,7 @@ export default [
         professionals:[//专业分包
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -550,6 +576,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -558,6 +585,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -565,6 +593,7 @@ export default [
                 Corp:"李勇"
             },{
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -573,6 +602,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",
@@ -581,6 +611,7 @@ export default [
             },
             {
                 name:"亚洲基础设施投资银行总部永久办公场所项目A标段",
+                title:"亚投行-现场临设",
                 sum:"4,250,000",
                 metering:"3,198,000",
                 payment:"3,198,000",

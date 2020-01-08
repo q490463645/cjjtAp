@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-01-07 17:17:16
+ * @LastEditTime : 2020-01-07 17:34:08
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \cjjtAp\src\components\dataAnalysis\contractAnalyze\contractAnalyze.vue
+ -->
 <template>
 	<div class="contractAnalyze">
 		<headered></headered>
@@ -49,10 +57,6 @@ export default {
     };
   },
   created() {
-	// console.log(this.msg);
-	ajax.getContractList(res=>{
-		console.log(res)
-	})
   },
   methods: {
 	enterItem (row) {
