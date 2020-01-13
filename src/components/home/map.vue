@@ -166,7 +166,7 @@ export default {
           this.myMap.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
           // this.myMap.enableAutoResize(); //地图的自适应布局
           this.myMap.setMapStyle({ style: "light" }); //地图的自定义样式
-          this.myMap.centerAndZoom(new BMap.Point(73, 24.18), 3); // 初始化地图,设置中心点坐标和地图级别
+          this.myMap.centerAndZoom(new BMap.Point(116.402544,39.908515), 3); // 初始化地图,设置中心点坐标和地图级别
           this.isPoint();
         })
         .catch(err => {

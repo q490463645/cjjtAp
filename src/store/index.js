@@ -7,9 +7,19 @@ export default new Vuex.Store({
       username: "",
       nickname: "",
       isLogin: false
+    },
+    data7Details:{
+    	jgrq: "",
+			kgrq: "",
+			orgcode: "",
+			type:"owner",
+			dw:""
     }
   },
   mutations: {
+  	setData7Details(state,data){
+  		 state.data7Details=data;
+  	},
     login(state, data) {
       state.loginInfo = data;
       sessionStorage.setItem("loginInfo", JSON.stringify(data));

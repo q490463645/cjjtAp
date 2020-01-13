@@ -31,14 +31,6 @@ export default new Router({
     	path: '/contractAnalyze',
       name: 'contractAnalyze',
       component: () => import("@/components/dataAnalysis/contractAnalyze/contractAnalyze"),
-      // children:[
-      //   {
-      //     path:'/contractAnalyze/messageDetails/:id',
-  
-      //     name:'messageDetails',
-      //     component:()=>import("@/components/dataAnalysis/contractAnalyze/messageDetails")
-      //   }
-      // ]
     },{
       path:'/contractAnalyze/messageDetails/:id',
       name:'messageDetails',
@@ -48,11 +40,22 @@ export default new Router({
     	path: '/contractDynamicAnalysis',
       name: 'contractDynamicAnalysis',
       component: () => import("@/components/dataAnalysis/contractAnalyze/contractDynamicAnalysis")
+    },
+    {
+    		//合同动态信息
+    	path: '/data7Details',
+      name: 'data7Details',
+      component: () => import("@/components/dataAnalysis/contractAnalyze/data7Details")
     },{
     	//合同信息分析
     	path: '/contractInformationAnalysis',
       name: 'contractInformationAnalysis',
       component: () => import("@/components/dataAnalysis/contractAnalyze/contractInformationAnalysis")
+    },{
+    	//合同信息分析
+    	path: '/hidden',
+      name: 'hidden',
+      component: () => import("@/components/businessSector/hidden")
     }
   ]
 })

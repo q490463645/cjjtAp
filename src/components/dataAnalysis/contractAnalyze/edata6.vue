@@ -5,76 +5,85 @@
 		<div class="projectLists" ref='projectLists'>
 			<div class="projectList" v-for="item in tableData">
 				<p>
-					<label class="labelItem">
-							{{item.R}}
-						</label>
 					<span class="itemTit">
 							{{item.HTMC}}
 						</span>
+					<label class="labelItem">
+							{{item.R}}
+						</label>
+
 				</p>
 				<p v-if='eData6.flag=="总包合同"'>
-					<label class="label">
-							建设单位:
-						</label>
 					<span class="itemTxt">
 							{{item.JSDW}}
 						</span>
+					<label class="label">
+							建设单位:
+						</label>
+
 				</p>
 				<p v-else-if='eData6.flag=="租赁合同"'>
-					<label class="label">
-							客商名称:
-						</label>
 					<span class="itemTxt">
 							{{item.KSMC}}
 						</span>
+					<label class="label">
+							客商名称:
+						</label>
+
 				</p>
 				<p v-else-if='eData6.flag=="采购合同"'>
-					<label class="label">
-							供应商:
-						</label>
 					<span class="itemTxt">
 							{{item.GYSMC}}
 						</span>
-				</p>
-				<p v-else-if='eData6.flag=="其他类合同"'>
 					<label class="label">
 							供应商:
 						</label>
+
+				</p>
+				<p v-else-if='eData6.flag=="其他类合同"'>
 					<span class="itemTxt">
 							{{item.GYS}}
 						</span>
+					<label class="label">
+							供应商:
+						</label>
+
 				</p>
 				<p v-else>
-					<label class="label">
-							分包商:
-						</label>
 					<span class="itemTxt">
 							{{item.FBSMC}}
 						</span>
+					<label class="label">
+							分包商:
+						</label>
+
 				</p>
 				<p v-if='eData6.flag=="总包合同"'>
-					<label class="label">
-							合同造价:
-						</label>
 					<span class="itemTxt">
 							{{item.HTZJ? utils.fmoney(item.HTZJ,1) : ''}}
 						</span>
+					<label class="label">
+							合同造价:
+						</label>
+
 				</p>
 				<p v-else>
-					<label class="label">
-							合同金额:
-						</label>
 					<span class="itemTxt">
 							{{item.HTJE? utils.fmoney(item.HTJE,1) : ''}}
 						</span>
+					<label class="label">
+							合同金额:
+						</label>
+
 				</p>
 				<p>
-					<label class="label">
-							所属单位:
-						</label>
 					<span class="itemTxt">
 							{{item.SSDW}}
 						</span>
+					<label class="label">
+							所属单位:
+						</label>
+
 				</p>
 			</div>
 		</div>

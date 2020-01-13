@@ -1,118 +1,93 @@
 <template>
 	<div>
-		<echt :id="'echarts6'" :data="eData6" @changeLegend="changeLegend" @clickBar='clickBar'></echt>
+		<echt :id="'echarts6'" :data="eData7" @change_Legend="changeLegend" @clickBar='clickBar'></echt>
 		<div class="projectLists" ref='projectLists'>
-			<div class="projectList" v-for="item in tableData">
+			<div class="projectList" v-for="item in childTable1">
 				<p>
 					<label class="labelItem">
 							{{item.R}}
-						</label>
-					<span class="itemTit">
-							{{item.HTMC}}
-						</span>
+					</label>
 				</p>
-				<p v-if='eData6.flag=="总包合同"'>
-					<label class="label">
-							建设单位:
-						</label>
+				<p v-if='eData7.flag=="业主方"'>
 					<span class="itemTxt">
-							{{item.JSDW}}
-						</span>
-				</p>
-				<p v-else-if='eData6.flag=="租赁合同"'>
+							{{item.DW}}
+					</span>
 					<label class="label">
-							客商名称:
-						</label>
-					<span class="itemTxt">
-							{{item.KSMC}}
-						</span>
-				</p>
-				<p v-else-if='eData6.flag=="采购合同"'>
-					<label class="label">
-							供应商:
-						</label>
-					<span class="itemTxt">
-							{{item.GYSMC}}
-						</span>
-				</p>
-				<p v-else-if='eData6.flag=="其他类合同"'>
-					<label class="label">
-							供应商:
-						</label>
-					<span class="itemTxt">
-							{{item.GYS}}
-						</span>
+						建设单位:
+					</label>
+					
 				</p>
 				<p v-else>
-					<label class="label">
-							分包商:
-						</label>
 					<span class="itemTxt">
-							{{item.FBSMC}}
-						</span>
-				</p>
-				<p v-if='eData6.flag=="总包合同"'>
+							{{item.DW}}
+					</span>
 					<label class="label">
-							合同造价:
+							{{eData7.flag}}
 						</label>
-					<span class="itemTxt">
-							{{item.HTZJ? utils.fmoney(item.HTZJ,1) : ''}}
-						</span>
-				</p>
-				<p v-else>
-					<label class="label">
-							合同金额:
-						</label>
-					<span class="itemTxt">
-							{{item.HTJE? utils.fmoney(item.HTJE,1) : ''}}
-						</span>
+					
 				</p>
 				<p>
-					<label class="label">
-							所属单位:
-						</label>
 					<span class="itemTxt">
-							{{item.SSDW}}
-						</span>
+							{{utils.fmoney(item.JE,0) }}
+					</span>
+					<label class="label">
+							合同总金额
+						</label>
+					
+				</p>
+				<p>
+					<span class="itemTxt">
+						<a @click="handleDetail(item)" type="text" size="small">详情</a>
+					</span>
+					<label class="label">
+							操作
+					</label>
+					
 				</p>
 			</div>
 		</div>
+		<data7Details @hide='hide' v-if='showDetail'></data7Details>
 	</div>
 </template>
 
 <script>
 	import headered from "./public/headered";
-
 	import menus from "./public/menus";
 	import echt from "./echart7";
+	import data7Details from "./data7Details";
+	import { Toast } from 'mint-ui';
 	export default {
 		name: "contractAnalyze",
 		components: {
 			headered,
 			menus,
-			echt
+			echt,
+			data7Details
 		},
 		data() {
 			return {
 				contractList: ['业主方', '专业分包方', '劳务分包方', '采购供货商', '租赁供应商', '其他合同供应商'],
-				eData7: {
-					OWNER: [],
-					PROFESSIONAL: [],
-					LABOUR: [],
-					PURCHASE: [],
-					LEASE: [],
-					OTHER: [],
-					name: [],
-					flag: ''
-				},
-				
+				 eData7:{
+			        OWNER:[],
+			        PROFESSIONAL:[],
+			        LABOUR:[],
+			        PURCHASE:[],
+			        LEASE:[],
+			        OTHER:[],
+			        name:[],  
+			        flag:''      
+			    },
+			    childTable1:[],
+			    childTable:[],
+			    showDetail:false,
+			    obj:{}
 			}
 		},
 		created() {
 
 		},
 		mounted() {
-			this.setEData6('总包合同');
+			this.setEData6('业主方');
 		},
 		methods: {
 			setEData6(name) {
@@ -123,7 +98,7 @@
 				let type = [
 					"owner", 'professional', 'labour', 'purchase', 'lease', 'other'
 				]
-				let obj = {
+				let obj = this.obj = {
 					jgrq: "",
 					kgrq: "",
 					orgcode: "",
@@ -132,9 +107,9 @@
 				 this.$http.get('http://172.16.1.100:8080/datacenter/contract/ranking_merchant',{
 			        params:obj
 			      }).then(res => {
-			        this.clearData1()
-			        let data = res.data
-			        this.childTable1 = data
+			        this.clearData()
+			        let data = res.data;
+			        this.childTable1 = data;
 			        switch (obj.type) {
 			          case 'owner':
 			            data.forEach(item => {
@@ -179,33 +154,36 @@
 			            this.eData7.flag = '其他合同供应商'
 			            break;
 			        }
-			        console.log(this.eData7)
 			      })
 			},
 			changeLegend(name) {
 				this.setEData6(name);
-				this.eData6.flag = name;
+				this.eData7.flag = name;
 			},
 			clickBar(num) {
 				this.$refs.projectLists.scrollTop = num * 121;
 			},
 			clearData() {
-				this.eData6 = {
-					HTZJ: [],
-					PROFESSIONAL: [],
-					LABOUR: [],
-					PURCHASE: [],
-					LEASE: [],
-					OTHER: [],
-					name: []
-				}
+				 this.eData7 = {
+			        OWNER:[],
+			        PROFESSIONAL:[],
+			        LABOUR:[],
+			        PURCHASE:[],
+			        LEASE:[],
+			        OTHER:[],
+			        name:[]
+			      }
+			},
+			handleDetail(item){
+				this.$store.commit('setData7Details',{
+		          ...this.obj,
+		          dw:item.DW
+		       })
+			   this.showDetail=true;
+			},
+			hide(){
+				this.showDetail=false
 			}
-		},
-		watch: {
-			selected: function(val, oldVal) {
-				console.log(val)
-			}
-
 		}
 	}
 </script>

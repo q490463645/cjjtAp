@@ -9,6 +9,7 @@
 				<mt-tab-item id="3">计量统计分析</mt-tab-item>
 			</mt-navbar>
 			<edata6 v-if='selected=="1"'></edata6>
+			<edata7 v-if='selected=="2"'></edata7>
 		</div>
 	</div>
 </template>
@@ -17,12 +18,14 @@
 	import headered from "./public/headered";
 	import menus from "./public/menus";
 	import edata6 from "./edata6";
+	import edata7 from "./edata7";
 	export default {
 		name: "contractAnalyze",
 		components: {
 			headered,
 			menus,
-			edata6
+			edata6,
+			edata7
 		},
 		data() {
 			return {

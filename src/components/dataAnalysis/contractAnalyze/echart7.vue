@@ -85,8 +85,8 @@ export default {
                 },
                 grid: {
                     left: '3%',
-                    right: '4%',
-                    bottom: '3%',
+                    right: '10%',
+                    bottom: '10%',
                     containLabel: true
                 },
                 xAxis:  {
@@ -135,7 +135,7 @@ export default {
                         0
                     ],
                     start: 0,
-                    end: 18,
+                    end: 10,
                     handleSize: '50%',
                     handleStyle: {
                         color: "#d3dee5",
@@ -243,10 +243,9 @@ export default {
             	this.paramsName=params.name
                 this.$emit('change_Legend',params.name)
             })
-            // this.myChart1.on('datazoom', (params) => {
-            //     var startValue = myChart.getModel().option.dataZoom[0].startValue;
-    		//     this.$emit('screenEchart',startValue);
-            // })
+            this.myChart1.on('click', (params) => {
+                this.$emit('clickBar',params.dataIndex)
+            })
         },
 
     },
