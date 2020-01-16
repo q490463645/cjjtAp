@@ -3,6 +3,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
+    base:"http://172.16.1.100:8080/datacenter",
     loginInfo: {
       username: "",
       nickname: "",

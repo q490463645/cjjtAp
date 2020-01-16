@@ -32,7 +32,7 @@ export default new Router({
       name: 'contractAnalyze',
       component: () => import("@/components/dataAnalysis/contractAnalyze/contractAnalyze"),
     },{
-      path:'/contractAnalyze/messageDetails/:id',
+      path:'/contractAnalyze/messageDetails/:pk',
       name:'messageDetails',
       component:()=>import("@/components/dataAnalysis/contractAnalyze/messageDetails")
     },{
