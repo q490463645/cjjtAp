@@ -144,9 +144,7 @@
                 </li>
                 <li>
                   <p>计 量：</p>
-                  <p
-                    @click="clickBlock(items.calculates)"
-                  >{{Array.isArray(items.calculates) && (items.calculates[0] ? get_thousand_num(items.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
+                  <p></p>
                 </li>
                 <li>
                   <p>付 款：</p>
