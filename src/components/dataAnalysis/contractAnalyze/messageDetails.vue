@@ -14,18 +14,20 @@
       </div>
       <mt-tab-container v-model="selected" v-for="(item,index) in itemdetail" :key="index">
         <mt-tab-container-item id="1">
-          <ul v-for="(item,index) in total" :key="index">
+          <ul v-for="(item,k) in total" :key="k">
             <h3>{{item.htmc}}</h3>
             <li>
               <!-- get_thousand_num -->
               <p>合同造价(含税)：</p>
               <p>{{get_thousand_num(item.htzj)+"&nbsp;元"}}</p>
             </li>
-            <li>
+            <li :id="`all${k}`">
               <p style="width:120px;">工程计量(业主批复)：</p>
               <p
-                @click="clickBlock(item.calculates)"
-              >{{Array.isArray(item.calculates) && (item.calculates[0] ? get_thousand_num(item.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
+                @click="clickBlock(item.calculates,$event,`all${k}`)"
+              >{{Array.isArray(item.calculates) && 
+                 (item.calculates[0] ? 
+                  get_thousand_num(item.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
             </li>
             <li>
               <p>合同开工日期：</p>
@@ -66,10 +68,10 @@
                   <p>合同金额(含税)：</p>
                   <p>{{get_thousand_num(items.htje)+"&nbsp;元"}}</p>
                 </li>
-                <li>
+                <li :id="`pro${k}`">
                   <p>计量：</p>
                   <p
-                    @click="clickBlock(items.calculates)"
+                    @click="clickBlock(items.calculates,$event,`pro${k}`)"
                   >{{Array.isArray(items.calculates) && (items.calculates[0] ? get_thousand_num(items.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
                 </li>
                 <li>
@@ -93,7 +95,7 @@
         </mt-tab-container-item>
         <mt-tab-container-item id="3">
           <h3 id="itemTop">{{item.name}}</h3>
-          <ul v-for="(item,index) in item.labours" :key="index">
+          <ul v-for="(item,k) in item.labours" :key="k">
             <li>
               <ol class="items">
                 <li>
@@ -104,11 +106,14 @@
                   <p>合同金额(含税)：</p>
                   <p>{{get_thousand_num(item.htje)+"&nbsp;元"}}</p>
                 </li>
-                <li>
+                <li :id="`labour${k}`">
                   <p>计 量：</p>
                   <p
-                    @click="clickBlock(item.calculates)"
-                  >{{Array.isArray(item.calculates) && (item.calculates[0] ? get_thousand_num(item.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
+                    @click="clickBlock(item.calculates,$event,`labour${k}`)"
+                  >
+                  {{Array.isArray(item.calculates) && (item.calculates[0] ? 
+                  get_thousand_num(item.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}
+                  </p>
                 </li>
                 <li>
                   <p>付 款：</p>
@@ -131,7 +136,7 @@
         </mt-tab-container-item>
         <mt-tab-container-item id="4">
           <h3 id="itemTop">{{item.name}}</h3>
-          <ul v-for="(items,index) in item.purchases" :key="index">
+          <ul v-for="(items,k) in item.purchases" :key="k">
             <li>
               <ol class="items">
                 <li>
@@ -167,7 +172,7 @@
         </mt-tab-container-item>
         <mt-tab-container-item id="5">
           <h3 id="itemTop">{{item.name}}</h3>
-          <ul v-for="(items,index) in item.leases" :key="index">
+          <ul v-for="(items,k) in item.leases" :key="k">
             <li>
               <ol class="items">
                 <li>
@@ -178,10 +183,10 @@
                   <p>合同金额(含税)：</p>
                   <p>{{get_thousand_num(items.htje)+"&nbsp;元"}}</p>
                 </li>
-                <li>
-                  <p>计 量：</p>
+                <li :id="`purchase${k}`">
+                  <p >计 量：</p>
                   <p
-                    @click="clickBlock(items.calculates)"
+                    @click="clickBlock(items.calculates,$event,`purchase${k}`)"
                   >{{Array.isArray(items.calculates) && (items.calculates[0] ? get_thousand_num(items.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
                 </li>
                 <li>
@@ -205,7 +210,7 @@
         </mt-tab-container-item>
         <mt-tab-container-item id="6">
           <h3 id="itemTop">{{item.name}}</h3>
-          <ul v-for="(item,index) in item.others" :key="index">
+          <ul v-for="(item,k) in item.others" :key="k">
             <li>
               <ol class="items">
                 <li>
@@ -216,10 +221,10 @@
                   <p>合同金额(含税)：</p>
                   <p>{{get_thousand_num(item.htje)+"&nbsp;元"}}</p>
                 </li>
-                <li>
+                <li :id="`other${k}`">
                   <p>计 量：</p>
                   <p
-                    @click="clickBlock(item.calculates)"
+                    @click="clickBlock(item.calculates,$event,`other${k}`)"
                   >{{Array.isArray(item.calculates) && (item.calculates[0] ? get_thousand_num(item.calculates[0].finalAmount)+"&nbsp;元" : "暂无数据")}}</p>
                 </li>
                 <li>
@@ -241,7 +246,7 @@
             <b>其他合同&nbsp;{{item.othersSize+"&nbsp;项"}}</b>
           </div>
         </mt-tab-container-item>
-        <mt-popup
+        <!-- <mt-popup
           v-model="showDropDown"
           popup-transition="popup-fade"
           :closeOnClickModal="showDropDown"
@@ -252,8 +257,17 @@
               :key="index"
             >第{{items.time}}次付款：{{items.currentAmount}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{items.day&& items.day.substr(0,10)}}</li>
           </ul>
-        </mt-popup>
-        <div class="v-modal" style="z-index:2000;" v-if="showDropDown" @click="changeviews()"></div>
+        </mt-popup> -->
+        <!-- <div class="v-modal" style="z-index:2000;" v-if="showDropDown" @click="changeviews()"></div> -->
+      <div class="propDown" :style="`top:+${popTop};left:${propleft}`" v-show="showDropDown">
+        <ul class="prop">
+          <li
+            v-for="(items, index) in list"
+            :key="index"
+          >第{{items.time}}次付款：{{items.currentAmount}}&nbsp;&nbsp;{{items.day&& items.day.substr(0,10)}}</li>
+        </ul>
+      </div>
+      
       </mt-tab-container>
     </div>
   </div>
@@ -278,7 +292,10 @@ export default {
       zulins: [], //租赁
       qitas: [], //其他,
       showDropDown: false,
-      list: []
+      list: [],
+      popTop:'',
+      propleft:'',
+      eleId:''
     };
   },
   components: {
@@ -286,12 +303,15 @@ export default {
     Popup
   },
   methods: {
-    clickBlock(list) {
+    clickBlock(list,e,id) {
+      this.popTop = e.toElement.offsetTop + (e.toElement.offsetHeight * 2) + 'px'
+      this.propleft = e.toElement.offsetLeft - (e.toElement.offsetWidth*2) + 'px'
       this.list = list;
-      console.log(list);
-      list.length ? (this.showDropDown = false) : (this.showDropDown = true);
-      this.showDropDown = !this.showDropDown;
+      this.eleId = id
+    //   list.length ? (this.showDropDown = false) : (this.showDropDown = true);
+      this.showDropDown =  !this.showDropDown ;
     },
+
     changeviews() {
       this.showDropDown = false;
     },
@@ -309,6 +329,16 @@ export default {
     }
   },
   mounted() {
+    document.addEventListener('click',(e) => {
+        try {
+             if(!document.querySelector('#'+this.eleId).contains(e.target)) {
+                  this.showDropDown = false
+                //   this.show = false
+             }
+        } catch (error) {
+
+        }
+    })
     this.$http
       .get(this.$store.state.base + "/contract/advance_query", {})
       .then(res => {
@@ -332,6 +362,14 @@ export default {
   },
   created() {
     console.log(this.$route.params)
+  },
+  watch:{
+      showDropDown (val) {
+          console.log(val)
+      }
   }
 };
 </script>
+<style scoped>
+
+</style>
