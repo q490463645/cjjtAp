@@ -89,7 +89,6 @@ export default {
   methods: {
     enterItem(row) {
       console.log(row.pk);
-      return
       this.$router.push({ path: `/contractAnalyze/messageDetails/${row.pk}` });
 	},
 	//   下拉刷新
