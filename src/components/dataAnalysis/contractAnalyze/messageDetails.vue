@@ -304,12 +304,18 @@ export default {
   },
   methods: {
     clickBlock(list,e,id) {
+      console.log(list,e,id)
       this.popTop = e.toElement.offsetTop + (e.toElement.offsetHeight * 2) + 'px'
       this.propleft = e.toElement.offsetLeft - (e.toElement.offsetWidth*2) + 'px'
       this.list = list;
+      if(this.list.length==0){
+        this.showDropDown=false;
+      }else{
+        this.showDropDown =  !this.showDropDown ;
+      }
       this.eleId = id
     //   list.length ? (this.showDropDown = false) : (this.showDropDown = true);
-      this.showDropDown =  !this.showDropDown ;
+      // this.showDropDown =  !this.showDropDown ;
     },
 
     changeviews() {
