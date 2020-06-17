@@ -89,6 +89,7 @@ export default {
   methods: {
     enterItem(row) {
       console.log(row.pk);
+      return
       this.$router.push({ path: `/contractAnalyze/messageDetails/${row.pk}` });
 	},
 	//   下拉刷新
@@ -107,10 +108,12 @@ export default {
 		this.$http
       .get(this.$store.state.base + "/contract/advance_query", {})
       .then(res => {
-		// console.log(res.data.content)
+		 console.log(res.data.content)
 		this.courrentPage = 1;
         this.allLoaded = false; // 可以进行上拉
-		this.msg = res.data.content;
+		res.data.content.map(val=>{
+			this.msg.push(val)
+		})
 		this.$refs.loadmore.onTopLoaded();
         console.log(this.msg);
 	  }).catch(error => {
@@ -120,20 +123,21 @@ export default {
     },
     // 加载更多
     loadMore(isBottom) {
-	this.obj.number=this.courrentPage;
-    this.$http
-      .get(this.$store.state.base + "/contract/advance_query", {
-        params: this.obj.number
+    	this.courrentPage++;
+    	this.allLoaded =true;
+    	this.$http
+      .get(this.$store.state.base + "/contract/advance_query?page="+this.courrentPage, {
         })
       .then(res => {
-		  this.obj.number++;
-          // concat数组的追加
-          if (this.obj.number > 1) {
-            this.allLoaded = true; // 若数据已全部获取完毕
-		  }
+      	 this.allLoaded = false;
+		 if(res.data.content.length==0){
+		 	this.allLoaded =true;
+		 }
 		  console.log(res.data,'加载更多数据')
-		  this.msg = res.data.content;
-		  console.log(this.obj.number)
+		 res.data.content.map(val=>{
+			this.msg.push(val)
+		})
+		  console.log(this.courrentPage)
           this.$refs.loadmore.onBottomLoaded();
         })
         .catch(error => {
