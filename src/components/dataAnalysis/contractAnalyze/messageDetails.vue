@@ -304,12 +304,18 @@ export default {
   },
   methods: {
     clickBlock(list,e,id) {
+      console.log(list,e,id)
       this.popTop = e.toElement.offsetTop + (e.toElement.offsetHeight * 2) + 'px'
       this.propleft = e.toElement.offsetLeft - (e.toElement.offsetWidth*2) + 'px'
       this.list = list;
+      if(this.list.length==0){
+        this.showDropDown=false;
+      }else{
+        this.showDropDown =  !this.showDropDown ;
+      }
       this.eleId = id
     //   list.length ? (this.showDropDown = false) : (this.showDropDown = true);
-      this.showDropDown =  !this.showDropDown ;
+      // this.showDropDown =  !this.showDropDown ;
     },
 
     changeviews() {
@@ -339,14 +345,15 @@ export default {
 
         }
     })
+    let page=this.$route.params.pk.split("&")[1];
+    let pk=this.$route.params.pk.split("&")[0];
     this.$http
-      .get(this.$store.state.base + "/contract/advance_query", {})
+      .get(this.$store.state.base + "/contract/advance_query?page="+page, {})
       .then(res => {
         console.log(res.data.content,"res")
-        console.log(this.$route.params.pk)
         let data = res.data.content;
         let arr = data.filter((item, index) => {
-          return this.$route.params.pk == item.pk;
+          return pk == item.pk;
         });
         // this.itemdetail = arr
         arr.forEach((item, k) => {
