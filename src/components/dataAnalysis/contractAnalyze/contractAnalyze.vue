@@ -5,6 +5,7 @@
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \cjjtAp\src\components\dataAnalysis\contractAnalyze\contractAnalyze.vue
+ * 
  -->
 <template>
 	<div class="contractAnalyze">
@@ -74,3 +75,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+ 
+</style>
