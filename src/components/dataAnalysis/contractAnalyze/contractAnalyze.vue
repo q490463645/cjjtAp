@@ -88,8 +88,8 @@ export default {
   },
   methods: {
     enterItem(row) {
-      console.log(row.pk);
-      this.$router.push({ path: `/contractAnalyze/messageDetails/${row.pk}` });
+       // console.log(row.pk,row.page);
+      this.$router.push({ path: `/contractAnalyze/messageDetails/${row.pk}&${row.page}`});
 	},
 	//   下拉刷新
     loadTop() {
@@ -104,13 +104,16 @@ export default {
     },
     // 下来刷新加载
     loadFrist() {
+    	this.courrentPage = 1;
+    	this.msg=[];
 		this.$http
-      .get(this.$store.state.base + "/contract/advance_query", {})
+      .get(this.$store.state.base + "/contract/advance_query?page="+this.courrentPage, {})
       .then(res => {
-		 console.log(res.data.content)
-		this.courrentPage = 1;
+		 //console.log(res.data.content)
+		
         this.allLoaded = false; // 可以进行上拉
 		res.data.content.map(val=>{
+			val.page=this.courrentPage
 			this.msg.push(val)
 		})
 		this.$refs.loadmore.onTopLoaded();
@@ -132,8 +135,9 @@ export default {
 		 if(res.data.content.length==0){
 		 	this.allLoaded =true;
 		 }
-		  console.log(res.data,'加载更多数据')
+		 // console.log(res.data,'加载更多数据')
 		 res.data.content.map(val=>{
+		 	val.page=this.courrentPage;
 			this.msg.push(val)
 		})
 		  console.log(this.courrentPage)

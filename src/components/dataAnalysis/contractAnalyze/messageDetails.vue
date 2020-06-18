@@ -345,14 +345,15 @@ export default {
 
         }
     })
+    let page=this.$route.params.pk.split("&")[1];
+    let pk=this.$route.params.pk.split("&")[0];
     this.$http
-      .get(this.$store.state.base + "/contract/advance_query", {})
+      .get(this.$store.state.base + "/contract/advance_query?page="+page, {})
       .then(res => {
         console.log(res.data.content,"res")
-        console.log(this.$route.params.pk)
         let data = res.data.content;
         let arr = data.filter((item, index) => {
-          return this.$route.params.pk == item.pk;
+          return pk == item.pk;
         });
         // this.itemdetail = arr
         arr.forEach((item, k) => {
