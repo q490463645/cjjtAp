@@ -5,7 +5,7 @@ import $ from 'jquery'
 let url =
   // 'http://192.168.3.88:7101/datacenter/'
   // 'http://124.42.66.13:7101/datacenter/'
-  'http://172.16.1.100:8080/datacenter/'
+  'http://172.16.1.100:8088/datacenter/'
 export default {
   // 获取隐患排查
   getPro(obj, callback) {

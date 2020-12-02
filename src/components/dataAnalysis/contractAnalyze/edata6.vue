@@ -135,7 +135,7 @@
 					orgcode: "",
 					type: type[index]
 				}
-				this.$http.get('http://172.16.1.100:8080/datacenter/contract/ranking_list', {
+				this.$http.get('http://172.16.1.100:8088/datacenter/contract/ranking_list', {
 					params: obj
 				}).then(res => {
 					this.allTable = res.data;

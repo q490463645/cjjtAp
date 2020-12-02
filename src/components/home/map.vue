@@ -74,7 +74,7 @@ export default {
               // window.onmousewheel = document.onmousewheel = scrollFunc;
               marker.addEventListener("click", function(e) {
                 var pk = item.pk;
-                var path = "http://172.16.1.100:8080/datacenter/";
+                var path = "http://172.16.1.100:8088/datacenter/";
                 $.ajax({
                   type: "get",
                   url: path + "/rest/projects/" + pk,
