@@ -1,7 +1,7 @@
 @color1: #fff;
 @color2: rgb(88, 128, 179);
 @color3: rgb(255, 45, 45);
-@color4: rgb(10, 10, 10);
+@color4: rgb(255, 255, 255);
 @color5: rgb(200, 200, 200);
 * {
     margin: 0;
@@ -154,17 +154,22 @@
             .itemTit {
                 width: 75%;
                 float: right;
-                text-indent: 1em;
                 display: inline-block;
                 height: 26px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
+            .itemLong{
+                line-height: 16px;
+                height: 32px !important;
+                overflow: auto !important;
+                text-overflow: clip !important;
+                white-space: normal !important;
+            }
             .itemTxt {
                 width: 75%;
                 float: right;
-                text-indent: 1em;
                 display: inline-block;
                 height: 26px;
                 overflow: hidden;

@@ -5,7 +5,7 @@
 		<div class="projectLists" ref='projectLists'>
 			<div class="projectList" v-for="item in tableData">
 				<p>
-					<span class="itemTit">
+					<span :class="item.HTMC.length>=22?'itemTxt itemLong':'itemTxt'">
 							{{item.HTMC}}
 						</span>
 					<label class="labelItem">
@@ -14,7 +14,7 @@
 
 				</p>
 				<p v-if='eData6.flag=="总包合同"'>
-					<span class="itemTxt">
+					<span class="itemTit">
 							{{item.JSDW}}
 						</span>
 					<label class="label">

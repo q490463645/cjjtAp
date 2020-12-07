@@ -5,8 +5,9 @@
 		<div class="main">
 			<mt-navbar v-model="selected" description='acceptable'>
 				<mt-tab-item id="1">合同金额排名</mt-tab-item>
-				<mt-tab-item id="2">合同方排名</mt-tab-item>
-				<mt-tab-item id="3">计量统计分析</mt-tab-item>
+				<mt-tab-item id="2">业主方排名</mt-tab-item>
+				<mt-tab-item id="3">分包方排名</mt-tab-item>
+				<mt-tab-item id="4">计量统计分析</mt-tab-item>
 			</mt-navbar>
 			<edata6 v-if='selected=="1"'></edata6>
 			<edata7 v-if='selected=="2"'></edata7>
